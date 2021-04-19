@@ -10,8 +10,7 @@ class Register extends Component{
             email: "",
            addresss: "",
            phoneno: "",
-           password: "",
-           userType: ""
+           password: ""
           
 
         }
@@ -51,9 +50,7 @@ class Register extends Component{
 
         <p>Password<input type="text" name="password" value={this.state.password} onChange={this.changeHandle}/></p> 
 
-        <p>UserType<input type="text" name="userType" value={this.state.userType} onChange={this.changeHandle}/></p> 
-
-        <button onClick={this.btnSubmit}>SUBMIT</button>
+        <button onClick={this.btnSubmit}>REGISTER</button>
 
          </div>
          </form>

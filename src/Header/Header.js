@@ -2,41 +2,49 @@ import { Component } from "react";
 import { Link } from "react-router-dom";
 
 class Header extends Component{
-
+  logout = ()=>{
+    // localStorage.removeItem('token')
+    // localStorage.removeItem('id')
+    localStorage.clear()
+    window.location.href = '/'
+ 
+}
     render(){
-        if(localStorage.getItem('token') && localStorage.getItem('userType')=='Admin')
-        {
-            var menu = 
-            <div>
-               <li class="nav-item">
-            <Link class="nav-link"to="/">HOME</Link> 
-            </li>
-               <li class="nav-item">
-          <Link class="nav-link" to="/AddBus">Book</Link> 
-          </li>
+
+ 
+
+        // if(localStorage.getItem('token') && localStorage.getItem('userType')=='Admin')
+        // {
+        //     var menu = 
+        //     <div>
+        //        <li class="nav-item">
+        //     <Link class="nav-link"to="/">HOME</Link> 
+        //     </li>
+        //        <li class="nav-item">
+        //   <Link class="nav-link" to="/AddBus">Book</Link> 
+        //   </li>
              
-         
-            <li class="nav-item">
-            <Link class="nav-link"to='/Item'>Bus</Link>
-            </li>
+        //     <li class="nav-item">
+        //     <Link class="nav-link"to='/TransferHistory'>TransferHistory</Link>
+        //     </li>
            
-            <li class="nav-item">
-            <Link class="nav-link"to='/logout' onClick={this.logout}>Log Out</Link> 
-            </li>
-            <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            OTHERS
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="/DESTINATION">DESTINATION</a>
-            <a class="dropdown-item" href="/register">REGISTER</a>
-            <a class="dropdown-item" href="/dashboard">DASHBOARD</a>
-          </div>
-        </li>
-            </div>
+        //     <li class="nav-item">
+        //     <Link class="nav-link"to='/logout' onClick={this.logout}>Log Out</Link> 
+        //     </li>
+        //     <li class="nav-item dropdown">
+        //   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        //     OTHERS
+        //   </a>
+        //   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        //     <a class="dropdown-item" href="/DESTINATION">DESTINATION</a>
+        //     <a class="dropdown-item" href="/register">REGISTER</a>
+        //     <a class="dropdown-item" href="/dashboard">DASHBOARD</a>
+        //   </div>
+        // </li>
+        //     </div>
            
-        }
-        else if(localStorage.getItem('token' && localStorage.getItem('userType')=='User')){
+        // }
+        if(localStorage.getItem('token') && localStorage.getItem('userType')=='User'){
           var menu =
   
           <div>
@@ -55,7 +63,7 @@ class Header extends Component{
           <Link class="nav-link" to='/DESTINATION'>DESTINATION</Link>
           </li>
           <li class="nav-item">
-            <Link class="nav-link"to='/dashboard'>DASHBOARD</Link>
+            <Link class="nav-link" to='/dashboard'>DASHBOARD</Link>
             </li>
           <li class="nav-item">
           <Link class="nav-link" to='/logout' onClick={this.logout}>Log Out</Link>
@@ -64,9 +72,8 @@ class Header extends Component{
           </div>
         }
        
-      
-      
-        else{
+        else
+        {
             var menu =
         <div>
            
